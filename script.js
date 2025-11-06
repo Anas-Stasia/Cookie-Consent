@@ -13,21 +13,24 @@ modalCloseBtn.addEventListener('click', function(){
 
 consentForm.addEventListener('submit', function(e){
     e.preventDefault()
+    
+    const consentFormData = new FormData(consentForm)
+    console.log(consentFormData)
+
+
+    
     modalText.innerHTML = `
     <div class="modal-inner-loading">
         <img src="images/loading.svg" class="loading">
-        <p id="uploadText">
-            Uploading your data to the dark web...
-        </p>
-    </div>`
-
-})
-
-setTimeout(function(){
-        document.getElementById('upload-text').innerText = `Making the sale...`
-    }, 1500) 
-
-
+        <p id="upload-text">Uploading your data to the dark web...</p>
+    </div>` 
+    
+    setTimeout(function(){
+        document.getElementById('upload-text').innerText = `
+        Making the sale...`
+    }, 1500)
+    
+    
     setTimeout(function(){
         document.getElementById('modal-inner').innerHTML = `
         <h2>Thanks you sucker! </h2>
@@ -35,5 +38,7 @@ setTimeout(function(){
         <div class="idiot-gif">
             <img src="images/pirate.gif">
         </div>
-    ` 
+    `
     }, 3000)
+  
+}) 
